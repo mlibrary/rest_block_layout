@@ -1,0 +1,10 @@
+services:
+  rest_block_layout.normalizer.main_content_block_plugin:
+    class: Drupal\rest_block_layout\Normalizer\BlockNormalizer
+    tags:
+      - { name: normalizer, priority: 20 }
+    arguments:
+      - '@entity_type.manager'
+      - '@entity_type.repository'
+      - '@entity_field.manager'
+      - '@request_stack'
